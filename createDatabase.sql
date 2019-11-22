@@ -5,7 +5,7 @@ create table student
     Passwords varchar(30),
     fName varchar(20),
     lName varchar(20),
-    streetName varchar(30)
+    streetName varchar(30),
     city varchar(20),
     province varchar(20),
     postCode char(7),
