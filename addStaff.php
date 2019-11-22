@@ -19,11 +19,11 @@
 	$dob = mysqli_real_escape_string($conn, $_POST['dob']);
 	$gender = mysqli_real_escape_string($conn, $_POST['gender']);
 
-    $sql = "INSERT INTO student VALUES(NULL, '$username', '$password', '$first_name', '$last_name', '$address', '$city', '$province', '$postCode', '$phone', '$dob', '$gender', NULL)";
+    $sql = "INSERT INTO faculty VALUES(NULL, '$username', '$password', '$first_name', '$last_name', '$address', '$city', '$province', '$postCode', '$phone', '$dob', '$gender', NULL)";
 
     $retval = mysqli_query($conn, $sql);
     
-	$url = "http://localhost/cpsc4660Project/AddStudent.html";
+	$url = "http://localhost/cpsc4660Project/AddStaff.html";
 	if($retval){
 		header("Location: $url");
 	exit;
