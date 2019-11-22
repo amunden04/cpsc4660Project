@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title> Search Courses </title>
+		<link rel="stylesheet" href="css/main-style.css">
+	</head>
+
+<body>
+<center><h2>Search Courses</h2></center>
+<br><br>
+Please enter the search information into one or more of the categories below: <br><br>
+<form action="searchCourse.php" method="post" style="overflow-x:auto;">
+Course ID: <input type="number" name="courseID"> <br><br>
+Section: <input type="string" name="section"> <br><br>
+Classroom: <input type="string" name="classroom"><br><br>
+
+<br><br>
+<input type="submit" name= "course_search_submit">
+</form>
+<br>
+<input type="button" value="Return Home" onclick="window.location.href='menu.html'" />
+
+</body>
+</html>
