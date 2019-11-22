@@ -53,7 +53,7 @@
 			$i = 0;
 			$studentIDtoEdit[$i] = ($row['StudentID']);
 			echo "<form method='post' action='UpdateCustomer.php'>";
-			echo "<input type='hidden' name='CustID' value= $custIDtoEdit[$i]>";
+			echo "<input type='hidden' name='StudentID' value= $studentIDtoEdit[$i]>";
             echo "<tr>"."<td>" . $row["StudentID"] . "</td>" .
             "<td>" . $row["Usernames"] . "</td>" .
 			"<td>" . $row["Passwords"] . "</td>" .
