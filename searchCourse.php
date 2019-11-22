@@ -10,6 +10,8 @@
 <table id = "tables">
 	<tr>
         <th>Course ID</th>
+		<th>Course Number</th>
+		<th>Course Name</th>
         <th>Section</th>
         <th>Days</th>
 		<th>Times</th>
@@ -22,18 +24,20 @@
 
 	if (isset($_POST['course_search_submit']))
 	{
-	$section = $classroom = "";
+	$courseNum = $courseName = $section = $classroom = "";
 	$course_id = 0;
 
 	$course_id = mysqli_real_escape_string($conn, $_POST['courseID']);
+	$courseNum = mysqli_real_escape_string($conn, $_POST['courseNum']);
+	$courseName mysqli_real_escape_string($conn, $_POST['courseName']);
 	$section = mysqli_real_escape_string($conn, $_POST['section']);
 	$classroom = mysqli_real_escape_string($conn, $_POST['classroom']);
 
 	$courseIDtoEdit = [];
 	$i = 0;
 
-	$sql = "SELECT * FROM course WHERE((courseID = '$course_id') OR (section = '$section')
-			OR (classroom = '$classroom'))";	
+	$sql = "SELECT * FROM course WHERE((courseID = '$course_id') OR (courseNum = '$courseNum') OR (courseName = '$courseName')
+			OR (section = '$section') OR (classroom = '$classroom'))";	
 			
 	$result = mysqli_query($conn, $sql);
 
@@ -48,7 +52,9 @@
 			echo "<form method='post' action='UpdateCustomer.php'>";
 			echo "<input type='hidden' name='courseID' value= $courseIDtoEdit[$i]>";
             echo "<tr>"."<td>" . $row["courseID"] . "</td>" .
-            "<td>" . $row["section"] . "</td>" .
+			"<td>" . $row["courseNum"] . "</td>" .
+			"<td>" . $row["courseName"] . "</td>" .
+			"<td>" . $row["section"] . "</td>" .
 			"<td>" . $row["daysTaught"] . "</td>" .
 			"<td>" . $row["timeTaught"] . "</td>" .
 			"<td>" . $row["classroom"] . "</td>" . "</form>" . "</td>" .
