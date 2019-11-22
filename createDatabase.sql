@@ -37,8 +37,10 @@ create table faculty
 create table course 
 (
     courseID int not null auto_increment,
+    courseNum varchar(10),
+    courseName varchar(80),
     section char(1),
-    daysTaught char(3),
+    daysTaught varchar(5),
     timeTaught varchar(11),
     classroom varchar(8),
     primary key (courseID)
