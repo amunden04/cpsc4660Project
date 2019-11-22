@@ -29,7 +29,7 @@
 
 	$course_id = mysqli_real_escape_string($conn, $_POST['courseID']);
 	$courseNum = mysqli_real_escape_string($conn, $_POST['courseNum']);
-	$courseName mysqli_real_escape_string($conn, $_POST['courseName']);
+	$courseName = mysqli_real_escape_string($conn, $_POST['courseName']);
 	$section = mysqli_real_escape_string($conn, $_POST['section']);
 	$classroom = mysqli_real_escape_string($conn, $_POST['classroom']);
 
