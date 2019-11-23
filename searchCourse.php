@@ -25,9 +25,7 @@
 	if (isset($_POST['course_search_submit']))
 	{
 	$courseNum = $courseName = $section = $classroom = "";
-	$course_id = 0;
 
-	$course_id = mysqli_real_escape_string($conn, $_POST['courseID']);
 	$courseNum = mysqli_real_escape_string($conn, $_POST['courseNum']);
 	$courseName = mysqli_real_escape_string($conn, $_POST['courseName']);
 	$section = mysqli_real_escape_string($conn, $_POST['section']);
@@ -36,7 +34,7 @@
 	$courseIDtoEdit = [];
 	$i = 0;
 
-	$sql = "SELECT * FROM course WHERE((courseID = '$course_id') OR (courseNum = '$courseNum') OR (courseName = '$courseName')
+	$sql = "SELECT * FROM course WHERE((courseNum = '$courseNum') OR (courseName = '$courseName')
 			OR (section = '$section') OR (classroom = '$classroom'))";	
 			
 	$result = mysqli_query($conn, $sql);
