@@ -29,18 +29,12 @@
 
 	if (isset($_POST['staff_search_submit']))
 	{
-	$first_name = $last_name = "";
-	$employee_id = 0;
+	$firstName = $lastName = "";
+	$firstName = $_POST['fName'];
+	$lastName = $_POST['lName'];
 
-	$employee_id = mysqli_real_escape_string($conn, $_POST['StaffID']);
-	$first_name = mysqli_real_escape_string($conn, $_POST['fName']);
-	$last_name = mysqli_real_escape_string($conn, $_POST['lName']);
-
-	$staffIDtoEdit = [];
-	$i = 0;
-
-	$sql = "SELECT * FROM faculty WHERE((StaffID = '$employee_id') OR (fName = '$first_name')
-			OR (lName = '$last_name'))";	
+	$sql = "SELECT * FROM faculty WHERE fName LIKE '%".$firstName."%' OR
+	WHERE lName LIKE '%".$lastName."%'";	
 			
 	$result = mysqli_query($conn, $sql);
 
@@ -50,10 +44,6 @@
 	if( mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result))
 		{
-			$i = 0;
-			$staffIDtoEdit[$i] = ($row['StaffID']);
-			echo "<form method='post' action='UpdateCustomer.php'>";
-			echo "<input type='hidden' name='StaffID' value= $staffIDtoEdit[$i]>";
             echo "<tr>"."<td>" . $row["StaffID"] . "</td>" .
             "<td>" . $row["Usernames"] . "</td>" .
 			"<td>" . $row["Passwords"] . "</td>" .
@@ -66,9 +56,7 @@
             "<td>" . $row["Phone"] . "</td>" .
             "<td>" . $row["DOB"] . "</td>" .
 			"<td>" . $row["gender"] . "</td>" . "</form>" . "</td>" .
-			"</tr>";
-			$i = ($i+1);
-			
+			"</tr>";			
 		}
 	 } else {
 			echo "0 Results";
