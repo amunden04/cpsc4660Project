@@ -29,12 +29,11 @@
 
 	if (isset($_POST['student_search_submit']))
 	{
-	$first_name = $last_name = "";
+	$first_name = "";
 	$firstName = $_POST['fName'];
-	$lastName = $_POST['lName'];
+	//$lastName = $_POST['lName'];
 
-	$sql = "SELECT * FROM faculty WHERE fName LIKE '%".$firstName."%' OR
-	WHERE lName LIKE '%".$lastName."%'";	
+	$sql = "SELECT * FROM student WHERE fName LIKE '%".$firstName."%'";	
 				
 	$result = mysqli_query($conn, $sql);
 
