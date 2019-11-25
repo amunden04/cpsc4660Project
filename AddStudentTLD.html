@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title> Add New Student </title>
+        <link rel="stylesheet" href="css/main-style.css">
+    </head>
+
+<body>
+
+<center><h2>Add New Student</h2></center>
+
+<h3><u> Student Information </u></h3>
+
+<form action="addStudent.php" method="post" style="overflow-x:auto;">
+    Username: <input type="string" name="username" maxlength="40" required><br><br>
+    Password: <input type="string" name="password" maxlength="30" required><br><br>
+	First Name: <input type="string" name="fName" maxlength="20" required><br><br>
+	Last Name: <input type="string" name="lName" maxlength="20" required><br><br>
+    Date of birth: <input type="date" name="dob" required><br><br>
+	Gender: <input type ="string" name = "gender" maxlength="1"> <br><br>
+	Address: <input type="string" name="streetName" maxlength="30"><br><br>
+	City: <input type="string" name="city" maxlength="20"><br><br>
+	Province: <input type="string" name="province" maxlength="20"><br><br>
+	Postal Code: <input type="string" name="postCode" maxlength="7"><br><br>
+	Phone Number: <input type="string" name="phone" maxlength="14"><br><br>
+	
+<br><br>
+<input type="submit" name= "student_submit">
+</form>
+<br><br>
+<input type="button" value="Return Home" onclick="window.location.href='menuTypeLengthDetection.html'" />
+
+</body>
+</html>

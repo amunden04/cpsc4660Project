@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title> Add New Course</title>
+        <link rel="stylesheet" href="css/main-style.css">
+    </head>
+
+<body>
+
+<center><h2>Add New Course</h2></center>
+
+<h3><u> Course Information </u></h3>
+
+<form action="addCourse.php" method="post" style="overflow-x:auto;">
+Course Number: <input type="string" name="courseNum" maxlength="10" required><br><br>
+Course Name: <input type="string" name="courseName" maxlength="80" required><br><br>
+Section: <input type="string" name="section" maxlength="1" required><br><br>
+Days Offered: <input type="string" name="daysTaught" maxlength="5" required><br><br>
+Times Offered: <input type="string" name="timeTaught" maxlength="11" required><br><br>
+Classroom: <input type="string" name="classroom" maxlength="8" required><br><br>
+
+<br><br>
+<input type="submit" name= "course_submit">
+</form>
+<br><br>
+<input type="button" value="Return Home" onclick="window.location.href='menuTypeLengthDetection.html'" />
+
+</body>
+</html>
