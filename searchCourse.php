@@ -24,10 +24,11 @@
 
 	if (isset($_POST['course_search_submit']))
 	{
-	$courseNum = "";
+	$courseNum = $courseNum = "";
+	$courseNum = $_POST['courseNum'];
 	$courseName = $_POST['courseName'];
 	
-	$sql = "SELECT * FROM course WHERE courseName LIKE '%".$courseName."%'";
+	$sql = "SELECT * FROM course WHERE courseNum LIKE '%".$courseNum."%' OR courseName LIKE '%".$courseName."%'";
 	$result = mysqli_query($conn, $sql);
 
 	if (! $result) 
