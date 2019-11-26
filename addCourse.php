@@ -6,12 +6,12 @@
     {
     $courseNum = $courseName = $section = $days = $times = $classroom = "";
 	
-	$courseNum = mysqli_real_escape_string($conn, $_POST['courseNum']);
-	$courseName = mysqli_real_escape_string($conn, $_POST['courseName']);
-	$section = mysqli_real_escape_string($conn, $_POST['section']);
-    $days = mysqli_real_escape_string($conn, $_POST['daysTaught']);
-	$times = mysqli_real_escape_string($conn, $_POST['timeTaught']);
-	$classroom = mysqli_real_escape_string($conn, $_POST['classroom']);
+	$courseNum = $_POST['courseNum']);
+	$courseName = $_POST['courseName']);
+	$section = $_POST['section']);
+    $days = $_POST['daysTaught']);
+	$times = $_POST['timeTaught']);
+	$classroom = $_POST['classroom']);
 	
     $sql = "INSERT INTO course VALUES(NULL, '$courseNum', '$courseName', '$section', '$days', '$times', '$classroom')";
 
