@@ -29,11 +29,10 @@
 
 	if (isset($_POST['staff_search_submit']))
 	{
-	$firstName = "";
-	$firstName = $_POST['fName'];
-	//$lastName = $_POST['lName'];
+	$lastName = "";
+	$lastName = $_POST['lName'];
 
-	$sql = "SELECT * FROM faculty WHERE fName LIKE '%".$firstName."%'";	
+	$sql = "SELECT * FROM faculty WHERE lName LIKE '%".$lastName."%'";	
 			
 	$result = mysqli_query($conn, $sql);
 
