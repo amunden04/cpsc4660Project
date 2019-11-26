@@ -2,7 +2,7 @@
     include 'connectdb.php';
     $conn = connect_sql();
 
-    if (isset($_POST['student_submit']))
+    if (isset($_POST['staff_submit']))
     {
     $username = $password = $first_name = $last_name = $address = $city = $province = $phone = $postCode = $dob = "";
 	$gender = '';
@@ -19,11 +19,11 @@
 	$dob = $_POST['dob'];
 	$gender = $_POST['gender'];
 
-    $sql = "INSERT INTO student VALUES(NULL, '$username', '$password', '$first_name', '$last_name', '$address', '$city', '$province', '$postCode', '$phone', '$dob', '$gender', NULL)";
+    $sql = "INSERT INTO faculty VALUES(NULL, '$username', '$password', '$first_name', '$last_name', '$address', '$city', '$province', '$postCode', '$phone', '$dob', '$gender', NULL)";
 
     $retval = mysqli_query($conn, $sql);
     
-	$url = "http://localhost/4660Project/menu.html";
+	$url = "http://localhost/4660Project/menuTypeLengthDetection.html";
 	if($retval){
 		header("Location: $url");
 	exit;

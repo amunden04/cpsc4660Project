@@ -4,9 +4,9 @@
 
     if (isset($_POST['staff_submit']))
     {
-    $username = $password = $first_name = $last_name = $address = $city = $province = $phone = $postCode = $dob = "";
-	$gender = '';
-    
+	$username = $password = $first_name = $last_name = $address = $city = $province = $phone = $postCode = $dob = "";
+	$gender ='';
+	    
     $username = $_POST['username'];
     $password = $_POST['password'];
 	$first_name = $_POST['fName'];
