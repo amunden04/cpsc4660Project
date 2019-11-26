@@ -6,12 +6,12 @@
     {
     $courseNum = $courseName = $section = $days = $times = $classroom = "";
 	
-	$courseNum = $_POST['courseNum']);
-	$courseName = $_POST['courseName']);
-	$section = $_POST['section']);
-    $days = $_POST['daysTaught']);
-	$times = $_POST['timeTaught']);
-	$classroom = $_POST['classroom']);
+	$courseNum = $_POST['courseNum'];
+	$courseName = $_POST['courseName'];
+	$section = $_POST['section'];
+    $days = $_POST['daysTaught'];
+	$times = $_POST['timeTaught'];
+	$classroom = $_POST['classroom'];
 	
     $sql = "INSERT INTO course VALUES(NULL, '$courseNum', '$courseName', '$section', '$days', '$times', '$classroom')";
 
