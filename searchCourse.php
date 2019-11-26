@@ -27,7 +27,7 @@
 	$courseName = "";
 	$courseName = $_POST['courseName'];
 	
-	$sql = "SELECT * FROM course WHERE courseName LIKE '%".$courseName."%';
+	$sql = "SELECT * FROM course WHERE courseName LIKE '%".$courseName."%'";
 	$result = mysqli_query($conn, $sql);
 
 	if (! $result) 

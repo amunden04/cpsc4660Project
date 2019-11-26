@@ -20,13 +20,15 @@
 
 <?php
 	include 'connectdb.php';
+	include 'SKWFunction.php';
 	$conn = connect_sql();
 
 	if (isset($_POST['course_search_submit']))
 	{
-	$courseName = "";
-	$courseName = mysqli_real_escape_string($conn, $_POST['courseName']);
-	
+		$temp = $courseName = "";
+		$temp = $_POST['courseName'];
+		$courseName = mres($temp);
+		
 	$sql = "SELECT * FROM course WHERE courseName LIKE '%".$courseName."%'";
 	$result = mysqli_query($conn, $sql);
 
