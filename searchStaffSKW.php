@@ -29,11 +29,10 @@
 
 	if (isset($_POST['staff_search_submit']))
 	{
-	$firstName = "";
-	$firstName = $_POST['fName'];
-	//$lastName = $_POST['lName'];
+	$lastName = "";
+	$lastName = mysqli_real_escape_string($conn, $_POST['lName'];
 
-	$sql = "SELECT * FROM faculty WHERE fName LIKE '%".$firstName."%'";	
+	$sql = "SELECT * FROM faculty WHERE lName LIKE '%".$lastName."%'";	
 			
 	$result = mysqli_query($conn, $sql);
 
@@ -67,6 +66,6 @@
 </table>
 
 <br><br>
-<input type="button" value="Return Home" onclick="window.location.href='menu.html'" />
+<input type="button" value="Return Home" onclick="window.location.href='menuSensitiveKeyWord.html'" />
 
 </html>

@@ -66,6 +66,6 @@
 </table>
 
 <br><br>
-<input type="button" value="Return Home" onclick="window.location.href='menu.html'" />
+<input type="button" value="Return Home" onclick="window.location.href='menuSensitiveKeyWord.html'" />
 
 </html>

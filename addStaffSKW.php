@@ -23,7 +23,7 @@
 
     $retval = mysqli_query($conn, $sql);
     
-	$url = "http://localhost/cpsc4660Project/AddStaff.html";
+	$url = "http://localhost/4660Project/menuSensitiveKeyWord.html";
 	if($retval){
 		header("Location: $url");
 	exit;
