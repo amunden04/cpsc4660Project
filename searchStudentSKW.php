@@ -29,11 +29,10 @@
 
 	if (isset($_POST['student_search_submit']))
 	{
-	$first_name = "";
-	$firstName = $_POST['fName'];
-	//$lastName = $_POST['lName'];
+	$lastName = "";
+	$lastName = mysqli_real_escape_string($conn, $_POST['lName']);
 
-	$sql = "SELECT * FROM student WHERE fName LIKE '%".$firstName."%'";	
+	$sql = "SELECT * FROM student WHERE lName LIKE '%".$lastName."%'";	
 				
 	$result = mysqli_query($conn, $sql);
 

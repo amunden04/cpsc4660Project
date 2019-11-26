@@ -24,8 +24,8 @@
 
 	if (isset($_POST['course_search_submit']))
 	{
-	$courseNum = "";
-	$courseName = $_POST['courseName'];
+	$courseName = "";
+	$courseName = mysqli_real_escape_string($conn, $_POST['courseName']);
 	
 	$sql = "SELECT * FROM course WHERE courseName LIKE '%".$courseName."%'";
 	$result = mysqli_query($conn, $sql);
