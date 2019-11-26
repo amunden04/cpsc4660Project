@@ -1,19 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/main-style.css">
+	</head>	
+
+<body>
+<br><center><h3>Results</h3></center><br>
+
+<table id = "tables">
+	<tr>
+        <th>Course ID</th>
+		<th>Course Number</th>
+		<th>Course Name</th>
+        <th>Section</th>
+        <th>Days</th>
+		<th>Times</th>
+		<th>Classroom</th>
+	</tr>
+
 <?php
 	include 'connectdb.php';
 	$conn = connect_sql();
-
+	
 	if (isset($_POST['course_search_submit']))
 	{
-	$courseNum = $courseName = $section = $classroom = "";
+		$temp = $courseName = "";
+		$temp = $_POST['courseName'];
+		$courseName = addcslashes($temp, ";',");
 
-	//$courseName = mysqli_real_escape_string($conn, $_POST['courseName']);
-	//$section = mysqli_real_escape_string($conn, $_POST['section']);
-	//$classroom = mysqli_real_escape_string($conn, $_POST['classroom']);
-
-	$courseIDtoEdit = [];
-	$i = 0;
-
-	$sql = "SELECT * FROM course WHERE((courseNum = '$_POST[courseNum]')";
+	$sql = "SELECT * FROM course WHERE courseName LIKE '%".$courseName."%'";
 	$result = mysqli_query($conn, $sql);
 
 	if (! $result) 
@@ -22,10 +37,6 @@
 	if( mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result))
 		{
-			$i = 0;
-			$courseIDtoEdit[$i] = ($row['courseID']);
-			echo "<form method='post' action='UpdateCustomer.php'>";
-			echo "<input type='hidden' name='courseID' value= $courseIDtoEdit[$i]>";
             echo "<tr>"."<td>" . $row["courseID"] . "</td>" .
 			"<td>" . $row["courseNum"] . "</td>" .
 			"<td>" . $row["courseName"] . "</td>" .
@@ -34,7 +45,6 @@
 			"<td>" . $row["timeTaught"] . "</td>" .
 			"<td>" . $row["classroom"] . "</td>" . "</form>" . "</td>" .
 			"</tr>";
-			$i = ($i+1);
 			
 		}
 	 } else {
@@ -42,5 +52,10 @@
 		}
 	}
 		mysqli_close($conn);
-
+	
 ?>
+
+<br><br>
+<input type="button" value="Return Home" onclick="window.location.href='menu.html'" />
+
+</html>
