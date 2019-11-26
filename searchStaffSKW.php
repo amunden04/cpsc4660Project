@@ -30,7 +30,7 @@
 	if (isset($_POST['staff_search_submit']))
 	{
 	$lastName = "";
-	$lastName = mysqli_real_escape_string($conn, $_POST['lName'];
+	$lastName = mysqli_real_escape_string($conn, $_POST['lName']);
 
 	$sql = "SELECT * FROM faculty WHERE lName LIKE '%".$lastName."%'";	
 			
