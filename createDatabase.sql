@@ -12,7 +12,6 @@ create table student
     Phone char(14),
     DOB char(10),
     gender char(1),
-    enrolledCourses varchar(25),
     primary key (StudentID)
 );
 
@@ -30,7 +29,6 @@ create table faculty
     Phone char(14),
     DOB char(10),
     gender char(1),
-    coursesTaught varchar(25),
     primary key (StaffID)
 );
 
